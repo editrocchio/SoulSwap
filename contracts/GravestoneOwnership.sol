@@ -17,8 +17,8 @@ contract GravestoneOwnership is ERC721, GravestoneFactory {
     }
 
   function _transfer(address _from, address _to, uint256 _tokenId) private {
-      ownerGravestoneCount[_to] = ownerGravestoneCount[_to]++;
-      ownerGravestoneCount[_from] =  ownerGravestoneCount[_from]++;
+      ownerGravestoneCount[_to]++;
+      ownerGravestoneCount[_from]--;
       gravestoneToOwner[_tokenId] = _to;
       emit Transfer(_from, _to, _tokenId);
   }

@@ -31,7 +31,7 @@ function ConnectBtn() {
     const handleClick = () => setLoading(true);
 
     return (
-        !connected ? <div className="centered">
+        !connected ? <div className="centered connectBtnDiv">
             <Button
             variant="primary"
             disabled={isLoading}

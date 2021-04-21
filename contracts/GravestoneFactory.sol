@@ -52,7 +52,7 @@ contract GravestoneFactory {
                 _lastName)), counter, id);
             
             gravestoneToOwner[id] = msg.sender;
-            ownerGravestoneCount[msg.sender] = ownerGravestoneCount[msg.sender]++;
+            ownerGravestoneCount[msg.sender]++;
     }
 
     function getGravestonesByOwner(address _owner) external view returns(uint[] memory) {
