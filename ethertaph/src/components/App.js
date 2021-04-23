@@ -7,6 +7,7 @@ import React from 'react';
 import Info from './Info'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Graveyard from './Graveyard'
 
 function App() {
   const { ethereum } = window;
@@ -61,11 +62,9 @@ function App() {
           <Info /><Card>
         <Button variant="dark" onClick={handleEnterGraveyardClick}>Enter Graveyard</Button>
       </Card>
-      </div> : null
-      case 2:
-        //todo
+      </div> : <Graveyard />
       default:
-        return null;
+        //
     }
   }
 
@@ -78,11 +77,17 @@ function App() {
   }
 
   ethereum.on('accountsChanged', (accounts) => {
-    setRenderVew(1);
+    if(accounts.length === 0) {
+      setRenderVew(0);
+      setGraveyardEntry(false);
+    } else {
+      setRenderVew(1);
+    }
   });
 
   function handleEnterGraveyardClick() {
     setGraveyardEntry(true);
+    setRenderVew(2);
   }
 
   checkIfConnectedOnLoad();

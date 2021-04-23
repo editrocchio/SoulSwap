@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
+
 function Info() {
     return (
         <Accordion className="infoAccord">
@@ -28,7 +29,8 @@ function Info() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="1">
                 <Card.Body>Ethertaph collects no fees, but you will need to pay the ETH transaction fee
-                    required to acll the contract and mint the ERC721 token.
+                    required to call the contract and mint the ERC721 token.<br/>If you'd like to donate to help 
+                    with server costs...<br/><b>ETH:</b> 0x111<br/><b>BTC:</b>11111<br/><b>XRP:</b>1111
                 </Card.Body>
                 </Accordion.Collapse>
             </Card>
@@ -40,7 +42,7 @@ function Info() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="2">
                 <Card.Body>Frontend: React, React-Bootstrap<br/>Backend: Solidity, Mongo DB
-                <br/><a href="github.com">Github</a></Card.Body>
+                <br/><a href="https://github.com/editrocchio/ethertaph">Github</a></Card.Body>
                 </Accordion.Collapse>
             </Card>
             </Accordion>

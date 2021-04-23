@@ -16,21 +16,18 @@ contract GravestoneFactory {
         string firstName;
         string middleName;
         string lastName;
-        uint256 deathDate;
-        string gender;
+        string birthDate;
+        string deathDate;
         string obituary;
-        bool isHuman;
-        string species;
         uint id;
         //TODO: image encoded to base64
     }
 
     function addToGraveStones(string memory _firstName, string memory _middleName, 
-        string memory _lastName, uint256 deathDate, string memory _gender, 
-        string memory _obituary, bool isHuman, string memory _species, uint id) private {
-            gravestones.push(GraveStone(_firstName, _middleName, _lastName, 
-            deathDate, _gender, _obituary, isHuman, _species = isHuman ? "human" : _species,
-            id));
+        string memory _lastName, string memory _birthDate, string memory _deathDate, 
+        string memory _obituary, uint id) private {
+            gravestones.push(GraveStone(_firstName, _middleName, _lastName, _birthDate,
+            _deathDate, _obituary, id));
     }
 
     function generateId(string memory _firstName, string memory _lastName, uint count)
