@@ -1,18 +1,25 @@
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
-
+import Web3 from 'web3';
 function ConnectBtn() {
     const [isLoading, setLoading] = useState(false);
-    const connectedState = useState(false)
-    const { ethereum } = window;
+    const [connected, setConnected] = useState(false);
+    const [buttonText, setButtonText] = useState("Connect Metamask");
 
-    const connected = connectedState[0];
-    const setConnected = connectedState[1]; 
-    
+    const { ethereum } = window;
+    const web3 = new Web3(window.ethereum);
+
+    web3.eth.getAccounts(function(error, accounts) {
+        if(accounts.length !== 0) {
+            setButtonText("Connected");
+            setConnected(true);
+        }
+    });
+
     const connectWallet = async () => {
         try {
-          await ethereum.request({ method: 'eth_requestAccounts' }).then(function() {
+            await ethereum.request({ method: 'eth_requestAccounts' }).then(function() {
               setConnected(true);
           });
         } catch (error) {
@@ -22,24 +29,27 @@ function ConnectBtn() {
     
     useEffect(() => {
         if (isLoading) {
+            setButtonText("Connecting...");
+
             connectWallet().then(() => {
-            setLoading(false);
-        });
+                setLoading(false);
+                setButtonText(connected ? "Connected" : "Connect Metamask");
+            });
         }
     }, [isLoading]);
 
     const handleClick = () => setLoading(true);
 
     return (
-        !connected ? <div className="centered connectBtnDiv">
+        <div className="connectBtn">
             <Button
             variant="primary"
-            disabled={isLoading}
+            disabled={isLoading || connected}
             onClick={!isLoading ? handleClick : null}
             >
-            {isLoading ? 'Connecting...' : 'Connect Metamask'}
+            {buttonText}
             </Button>
-        </div> : null
+        </div> 
     );
 }
   

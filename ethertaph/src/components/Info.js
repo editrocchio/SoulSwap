@@ -7,6 +7,7 @@ import '../App.css';
 
 function Info() {
     return (
+        <div>
         <Accordion className="infoAccord">
             <Card>
                 <Card.Header>
@@ -46,6 +47,7 @@ function Info() {
                 </Accordion.Collapse>
             </Card>
             </Accordion>
+            </div>
 
     );
 }
