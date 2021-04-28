@@ -3,9 +3,20 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Gravestone from './Gravestone';
+import apis from '../api'
 
 function Graveyard() {
+    apis.getAllInscriptions()
+    // const t = async() => { await api.getAllInscriptions().then(inscriptions => {
+    //     this.setState({
+    //         inscriptions: inscriptions.data.data,
+    //     }).then(function() {
+    //         console.log(inscriptions);
+    //     })
+    //     })
+    // }
 
+ 
     return(
         <CardColumns>
              <Gravestone 
