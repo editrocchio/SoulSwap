@@ -5,16 +5,15 @@ import "./ERC721Tradable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
- * @title SoulfFragment
- * SoulfFragment - a contract for my non-fungible soulf-fragments.
+ * @title SoulFragment
+ * SoulFragment - a contract for my non-fungible soul-fragments.
  */
-contract SoulfFragment is ERC721Tradable {
-    constructor(address _proxyRegistryAddress)
-        public
+contract SoulFragment is ERC721Tradable {
+    constructor(address _proxyRegistryAddress) public
         ERC721Tradable("SoulFragment", "SOUL", _proxyRegistryAddress)
     {}
 
-    function baseTokenURI() public pure returns (string memory) {
+    function baseTokenURI() public override pure returns (string memory) {
         return "https://soul-fragments-api.opensea.io/api/soul-fragment/";
     }
 

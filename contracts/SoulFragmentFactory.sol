@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "./IFactoryERC721.sol";
 import "./SoulFragment.sol";
 import "./StringUtils.sol";
+import './SoulLootBox.sol';
 
 contract SoulFragmentFactory is IFactoryERC721, Ownable {
     using Strings for string;
@@ -18,49 +19,49 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     address public proxyRegistryAddress;
     address public nftAddress;
     address public lootBoxNftAddress;
-    string public baseURI = "https://creatures-api.opensea.io/api/factory/";
+    string public baseURI = "https://souls-api.opensea.io/api/factory/";
 
-    /**
-     * Enforce the existence of only 100 OpenSea creatures.
+    /*
+     * Enforce the existence of only 100 OpenSea souls.
      */
-    uint256 CREATURE_SUPPLY = 100;
+    uint256 SOUL_SUPPLY = 100;
 
-    /**
-     * Three different options for minting Creatures (basic, premium, and gold).
+    /*
+     * Three different options for minting Souls (basic, premium, and gold).
      */
     uint256 NUM_OPTIONS = 3;
-    uint256 SINGLE_CREATURE_OPTION = 0;
-    uint256 MULTIPLE_CREATURE_OPTION = 1;
+    uint256 SINGLE_SOUL_OPTION = 0;
+    uint256 MULTIPLE_SOUL_OPTION = 1;
     uint256 LOOTBOX_OPTION = 2;
-    uint256 NUM_CREATURES_IN_MULTIPLE_CREATURE_OPTION = 4;
+    uint256 NUM_SOULS_IN_MULTIPLE_SOUL_OPTION = 4;
 
     constructor(address _proxyRegistryAddress, address _nftAddress) public {
         proxyRegistryAddress = _proxyRegistryAddress;
         nftAddress = _nftAddress;
         lootBoxNftAddress = address(
-            new CreatureLootBox(_proxyRegistryAddress, address(this))
+            new SoulLootBox(_proxyRegistryAddress, address(this))
         );
 
         fireTransferEvents(address(0), owner());
     }
 
-    function name() external view returns (string memory) {
-        return "OpenSeaCreature Item Sale";
+    function name() external override view returns (string memory) {
+        return "OpenSea Soul Item Sale";
     }
 
-    function symbol() external view returns (string memory) {
-        return "CPF";
+    function symbol() external override view returns (string memory) {
+        return "SOUL";
     }
 
-    function supportsFactoryInterface() public view returns (bool) {
+    function supportsFactoryInterface() public override view returns (bool) {
         return true;
     }
 
-    function numOptions() public view returns (uint256) {
+    function numOptions() public override view returns (uint256) {
         return NUM_OPTIONS;
     }
 
-    function transferOwnership(address newOwner) public onlyOwner {
+    function transferOwnership(address newOwner) public override onlyOwner {
         address _prevOwner = owner();
         super.transferOwnership(newOwner);
         fireTransferEvents(_prevOwner, newOwner);
@@ -72,7 +73,7 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         }
     }
 
-    function mint(uint256 _optionId, address _toAddress) public {
+    function mint(uint256 _optionId, address _toAddress) public override {
         // Must be sent from the owner proxy or owner.
         ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);
         assert(
@@ -82,49 +83,49 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         );
         require(canMint(_optionId));
 
-        Creature openSeaCreature = Creature(nftAddress);
-        if (_optionId == SINGLE_CREATURE_OPTION) {
-            openSeaCreature.mintTo(_toAddress);
-        } else if (_optionId == MULTIPLE_CREATURE_OPTION) {
+        SoulFragment openSeaSoul = SoulFragment(nftAddress);
+        if (_optionId == SINGLE_SOUL_OPTION) {
+            openSeaSoul.mintTo(_toAddress);
+        } else if (_optionId == MULTIPLE_SOUL_OPTION) {
             for (
                 uint256 i = 0;
-                i < NUM_CREATURES_IN_MULTIPLE_CREATURE_OPTION;
+                i < NUM_SOULS_IN_MULTIPLE_SOUL_OPTION;
                 i++
             ) {
-                openSeaCreature.mintTo(_toAddress);
+                openSeaSoul.mintTo(_toAddress);
             }
         } else if (_optionId == LOOTBOX_OPTION) {
-            CreatureLootBox openSeaCreatureLootBox = CreatureLootBox(
+            SoulLootBox openSeaSoulLootBox = SoulLootBox(
                 lootBoxNftAddress
             );
-            openSeaCreatureLootBox.mintTo(_toAddress);
+            openSeaSoulLootBox.mintTo(_toAddress);
         }
     }
 
-    function canMint(uint256 _optionId) public view returns (bool) {
+    function canMint(uint256 _optionId) public override view returns (bool) {
         if (_optionId >= NUM_OPTIONS) {
             return false;
         }
 
-        Creature openSeaCreature = Creature(nftAddress);
-        uint256 creatureSupply = openSeaCreature.totalSupply();
+        SoulFragment openSeaSoul = SoulFragment(nftAddress);
+        uint256 soulSupply = openSeaSoul.totalSupply(_optionId);
 
         uint256 numItemsAllocated = 0;
-        if (_optionId == SINGLE_CREATURE_OPTION) {
+        if (_optionId == SINGLE_SOUL_OPTION) {
             numItemsAllocated = 1;
-        } else if (_optionId == MULTIPLE_CREATURE_OPTION) {
-            numItemsAllocated = NUM_CREATURES_IN_MULTIPLE_CREATURE_OPTION;
+        } else if (_optionId == MULTIPLE_SOUL_OPTION) {
+            numItemsAllocated = NUM_SOULS_IN_MULTIPLE_SOUL_OPTION;
         } else if (_optionId == LOOTBOX_OPTION) {
-            CreatureLootBox openSeaCreatureLootBox = CreatureLootBox(
+            SoulLootBox openSeaSoulLootBox = SoulLootBox(
                 lootBoxNftAddress
             );
-            numItemsAllocated = openSeaCreatureLootBox.itemsPerLootbox();
+            numItemsAllocated = openSeaSoulLootBox.itemsPerLootbox();
         }
-        return creatureSupply < (CREATURE_SUPPLY - numItemsAllocated);
+        return soulSupply < (SOUL_SUPPLY - numItemsAllocated);
     }
 
-    function tokenURI(uint256 _optionId) external view returns (string memory) {
-        return Strings.strConcat(baseURI, Strings.uint2str(_optionId));
+    function tokenURI(uint256 _optionId) external override view returns (string memory) {
+        return StringUtils.strConcat(baseURI, StringUtils.uint2str(_optionId));
     }
 
     /**

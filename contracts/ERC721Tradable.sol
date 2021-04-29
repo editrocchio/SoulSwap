@@ -19,6 +19,7 @@ contract ERC721Tradable is ERC721, Ownable {
     using StringUtils for string;
     address proxyRegistryAddress;
     uint256 private _currentTokenId = 0;
+    mapping (uint256 => uint256) public tokenSupply;
 
     constructor(
         string memory _name,
@@ -38,6 +39,16 @@ contract ERC721Tradable is ERC721, Ownable {
         _incrementTokenId();
     }
 
+    
+    /**
+    * @dev Returns the total quantity for a token ID
+    * @param _id uint256 ID of the token to query
+    * @return amount of token in existence
+    */
+    function totalSupply(uint256 _id) public view returns (uint256) {
+        return tokenSupply[_id];
+    }
+
     /**
      * @dev calculates the next token ID based on value of _currentTokenId
      * @return uint256 for the next token ID
@@ -53,8 +64,8 @@ contract ERC721Tradable is ERC721, Ownable {
         _currentTokenId++;
     }
 
-    function baseTokenURI() public pure returns (string memory) {
-        return "https://soul-fragments-api.opensea.io/api/soul-fragment/";
+    function baseTokenURI() public virtual pure returns (string memory) {
+        return "";
     }
 
     function tokenURI(uint256 _tokenId) public override pure returns (string memory) {

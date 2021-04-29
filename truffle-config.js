@@ -23,6 +23,7 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+const { alchemyApiKey, mnemonic } = require('./secrets.json');
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -33,8 +34,12 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
-
+  
   networks: {
+    rinkeby: {
+      url: `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,
+        accounts: {mnemonic: mnemonic}
+      }
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
