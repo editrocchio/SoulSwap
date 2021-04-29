@@ -1,15 +1,15 @@
 {
   "contractName": "OwnableDelegateProxy",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol\":\"OwnableDelegateProxy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol\":{\"keccak256\":\"0xf1cedeea1a4a598092de96d5a835a35e952bcdc2659bbdeb8180b41de62686b5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://237e6ecc4c5bf832092e31abf20f5f8854aafaf491c9e649731f3f58c5943126\",\"dweb:/ipfs/QmYPKwJmtvdZnM76auqSSirfcmhdz5QWmVot7FX3xEuDCw\"]},\"/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/StringUtils.sol\":{\"keccak256\":\"0x9918c42e3d7124e78dae692c226955b3befd3d2da1c07c2997750182f634212a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4039d59dc99800ef19b90c5329d583e3c8bfd9e3f69b9d683f179109ddaca519\",\"dweb:/ipfs/QmPBVis833ycw3Gy49hwxFBwCiQqK8bYC7xQ4SQC7wuJPC\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x1cae4f85f114ff17b90414f5da67365b1d00337abb5bce9bf944eb78a2c0673c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d5ff16b336ce8f906478d5f2eecc6435e00833bdc0b92f6b209cf9e92cb5b2b7\",\"dweb:/ipfs/QmRD1rAZEqQ73C33cdA3QoUyBDMEWnNKNMc6PNkAZWHeQQ\"]},\"@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x8d1cabca557cb77d97d801d674f0dacc33659e1430cdd34f91ae5d033fc3d93f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://379879e94763b61c652f914da987a603fb1fec35645a1d6b8022413cf1c3a467\",\"dweb:/ipfs/QmVkFoHVN6XWztbJDHrWfMCRPV4QsbFGj6QPZYeMjQRfhr\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xc1c941ad1e580b4623007305921efe2f26fc7320a4edc226234dd707c658a428\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://473e11d739868e0d9f48254ccf84ba63290d6a2321d59a37b74c244a27f9cad7\",\"dweb:/ipfs/QmUGzDmecP936jzgM7SYyGwR1YgBGsveoHHJTbDfB8jbGF\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]},\"@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol\":{\"keccak256\":\"0xccb7e6475afcb1c5cb13b3fbf1329c10b93620a9b66393388066683915271a78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df5776161e3226ac31bfb919dfe5f42e173a08293fadb4ffa90ffb55e76869d7\",\"dweb:/ipfs/QmXtKfvWj1v6oha8urbnw4RmjSpmQjZsGGqK5qk5trK4nH\"]},\"@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0xb8d11e77eb1ed34a33720edb551d7d6a6b0eee2bfaa40a7024020e1fdf879b16\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c583283c838cc624a96a69eaa823fa92ac5294ec88d417e266c09ea091e0ae62\",\"dweb:/ipfs/QmNdzitXaFADaxooWpB4WsckkDyr4j6GQRxBjyKXsvEeXv\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x069b2631bb5b5193a58ccf7a06266c7361bd2c20095667af4402817605627f45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a4c96fafff76deda5697c3c5c98cade6e6e1b178254544c106bf360c079ce4e\",\"dweb:/ipfs/QmXmxubE3jnatFgZuN8ay1VV6hZ8WRmhvUjNpeVjki15HX\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x456e9b3a2bfe189b5249857f624f4139e59331db518483b456c4e587a20552e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1123c9545decc48a011370ebab4bf53dda98524fa21f9498e68851ba8f0ffc0f\",\"dweb:/ipfs/QmUpgMg8EFDnv87ePKUjXxXpJT3qwHRj9VDNSnRxu7T9sy\"]},\"@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549\",\"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn\"]},\"@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220a12cbbebf9cba177d95aecde2c6ca002aaf182236b940f419422d6a23259cd3e64736f6c63430008030033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220a12cbbebf9cba177d95aecde2c6ca002aaf182236b940f419422d6a23259cd3e64736f6c63430008030033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol\":\"OwnableDelegateProxy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol\":{\"keccak256\":\"0x8f9bedc90bddfdaae3528ea7075e8e2d983501dd3f60c4ec53264d8d5dd5433d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://656309ca131e1645ed498f361a46c82ffd0bb18084918c364aa6e451b211f935\",\"dweb:/ipfs/QmTU2N7YWfuhuNjZRnfDLkBC4ynNBomzJvUeWwbFaeeRoi\"]},\"/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/StringUtils.sol\":{\"keccak256\":\"0xdd411342270bd19598a93db5c47383bec60f5585b6a28263fec1cda66528b373\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df996ad28d0a8612cf136a0c9232395a027de538938865c9b66fa2f7067813ac\",\"dweb:/ipfs/QmcJH7G5Ku7xohGKRk13NTMyaxEk3BiNDVhvfAhtEuXSKc\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x1cae4f85f114ff17b90414f5da67365b1d00337abb5bce9bf944eb78a2c0673c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d5ff16b336ce8f906478d5f2eecc6435e00833bdc0b92f6b209cf9e92cb5b2b7\",\"dweb:/ipfs/QmRD1rAZEqQ73C33cdA3QoUyBDMEWnNKNMc6PNkAZWHeQQ\"]},\"@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x8d1cabca557cb77d97d801d674f0dacc33659e1430cdd34f91ae5d033fc3d93f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://379879e94763b61c652f914da987a603fb1fec35645a1d6b8022413cf1c3a467\",\"dweb:/ipfs/QmVkFoHVN6XWztbJDHrWfMCRPV4QsbFGj6QPZYeMjQRfhr\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xc1c941ad1e580b4623007305921efe2f26fc7320a4edc226234dd707c658a428\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://473e11d739868e0d9f48254ccf84ba63290d6a2321d59a37b74c244a27f9cad7\",\"dweb:/ipfs/QmUGzDmecP936jzgM7SYyGwR1YgBGsveoHHJTbDfB8jbGF\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]},\"@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol\":{\"keccak256\":\"0xccb7e6475afcb1c5cb13b3fbf1329c10b93620a9b66393388066683915271a78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df5776161e3226ac31bfb919dfe5f42e173a08293fadb4ffa90ffb55e76869d7\",\"dweb:/ipfs/QmXtKfvWj1v6oha8urbnw4RmjSpmQjZsGGqK5qk5trK4nH\"]},\"@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0xb8d11e77eb1ed34a33720edb551d7d6a6b0eee2bfaa40a7024020e1fdf879b16\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c583283c838cc624a96a69eaa823fa92ac5294ec88d417e266c09ea091e0ae62\",\"dweb:/ipfs/QmNdzitXaFADaxooWpB4WsckkDyr4j6GQRxBjyKXsvEeXv\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x069b2631bb5b5193a58ccf7a06266c7361bd2c20095667af4402817605627f45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a4c96fafff76deda5697c3c5c98cade6e6e1b178254544c106bf360c079ce4e\",\"dweb:/ipfs/QmXmxubE3jnatFgZuN8ay1VV6hZ8WRmhvUjNpeVjki15HX\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x456e9b3a2bfe189b5249857f624f4139e59331db518483b456c4e587a20552e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1123c9545decc48a011370ebab4bf53dda98524fa21f9498e68851ba8f0ffc0f\",\"dweb:/ipfs/QmUpgMg8EFDnv87ePKUjXxXpJT3qwHRj9VDNSnRxu7T9sy\"]},\"@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549\",\"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn\"]},\"@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212205f2672a0d608891120a00386ff8e6bb309f7db2b0e5fe213dcd37de72e0c776764736f6c63430008000033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212205f2672a0d608891120a00386ff8e6bb309f7db2b0e5fe213dcd37de72e0c776764736f6c63430008000033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
   "sourceMap": "204:32:0:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "204:32:0:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.3;\r\n\r\nimport \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\nimport \"./StringUtils.sol\";\r\n\r\ncontract OwnableDelegateProxy {}\r\n\r\ncontract ProxyRegistry {\r\n    mapping(address => OwnableDelegateProxy) public proxies;\r\n}\r\n\r\n/**\r\n * @title ERC721Tradable\r\n * ERC721Tradable - ERC721 contract that whitelists a trading address, and has minting functionality.\r\n */\r\ncontract ERC721Tradable is ERC721, Ownable {\r\n    using StringUtils for string;\r\n    address proxyRegistryAddress;\r\n    uint256 private _currentTokenId = 0;\r\n    mapping (uint256 => uint256) public tokenSupply;\r\n\r\n    constructor(\r\n        string memory _name,\r\n        string memory _symbol,\r\n        address _proxyRegistryAddress\r\n    ) public ERC721(_name, _symbol) {\r\n        proxyRegistryAddress = _proxyRegistryAddress;\r\n    }\r\n\r\n    /**\r\n     * @dev Mints a token to an address with a tokenURI.\r\n     * @param _to address of the future owner of the token\r\n     */\r\n    function mintTo(address _to) public onlyOwner {\r\n        uint256 newTokenId = _getNextTokenId();\r\n        _mint(_to, newTokenId);\r\n        _incrementTokenId();\r\n    }\r\n\r\n    \r\n    /**\r\n    * @dev Returns the total quantity for a token ID\r\n    * @param _id uint256 ID of the token to query\r\n    * @return amount of token in existence\r\n    */\r\n    function totalSupply(uint256 _id) public view returns (uint256) {\r\n        return tokenSupply[_id];\r\n    }\r\n\r\n    /**\r\n     * @dev calculates the next token ID based on value of _currentTokenId\r\n     * @return uint256 for the next token ID\r\n     */\r\n    function _getNextTokenId() private returns (uint256) {\r\n        return _currentTokenId++;\r\n    }\r\n\r\n    /**\r\n     * @dev increments the value of _currentTokenId\r\n     */\r\n    function _incrementTokenId() private {\r\n        _currentTokenId++;\r\n    }\r\n\r\n    function baseTokenURI() public virtual pure returns (string memory) {\r\n        return \"\";\r\n    }\r\n\r\n    function tokenURI(uint256 _tokenId) public override pure returns (string memory) {\r\n        return StringUtils.strConcat(baseTokenURI(), StringUtils.uint2str(_tokenId));\r\n    }\r\n\r\n    /**\r\n     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.\r\n     */\r\n    function isApprovedForAll(address owner, address operator) override\r\n        public\r\n        view\r\n        returns (bool)\r\n    {\r\n        // Whitelist OpenSea proxy contract for easy trading.\r\n        ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);\r\n        if (address(proxyRegistry.proxies(owner)) == operator) {\r\n            return true;\r\n        }\r\n\r\n        return super.isApprovedForAll(owner, operator);\r\n    }\r\n}\r\n\r\n",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\nimport \"./StringUtils.sol\";\r\n\r\ncontract OwnableDelegateProxy {}\r\n\r\ncontract ProxyRegistry {\r\n    mapping(address => OwnableDelegateProxy) public proxies;\r\n}\r\n\r\n/**\r\n * @title ERC721Tradable\r\n * ERC721Tradable - ERC721 contract that whitelists a trading address, and has minting functionality.\r\n */\r\ncontract ERC721Tradable is ERC721, Ownable {\r\n    using StringUtils for string;\r\n    address proxyRegistryAddress;\r\n    uint256 private _currentTokenId = 0;\r\n    mapping (uint256 => uint256) public tokenSupply;\r\n\r\n    constructor(\r\n        string memory _name,\r\n        string memory _symbol,\r\n        address _proxyRegistryAddress\r\n    ) public ERC721(_name, _symbol) {\r\n        proxyRegistryAddress = _proxyRegistryAddress;\r\n    }\r\n\r\n    /**\r\n     * @dev Mints a token to an address with a tokenURI.\r\n     * @param _to address of the future owner of the token\r\n     */\r\n    function mintTo(address _to) public onlyOwner {\r\n        uint256 newTokenId = _getNextTokenId();\r\n        _mint(_to, newTokenId);\r\n        _incrementTokenId();\r\n    }\r\n\r\n    \r\n    /**\r\n    * @dev Returns the total quantity for a token ID\r\n    * @param _id uint256 ID of the token to query\r\n    * @return amount of token in existence\r\n    */\r\n    function totalSupply(uint256 _id) public view returns (uint256) {\r\n        return tokenSupply[_id];\r\n    }\r\n\r\n    /**\r\n     * @dev calculates the next token ID based on value of _currentTokenId\r\n     * @return uint256 for the next token ID\r\n     */\r\n    function _getNextTokenId() private returns (uint256) {\r\n        return _currentTokenId++;\r\n    }\r\n\r\n    /**\r\n     * @dev increments the value of _currentTokenId\r\n     */\r\n    function _incrementTokenId() private {\r\n        _currentTokenId++;\r\n    }\r\n\r\n    function baseTokenURI() public virtual pure returns (string memory) {\r\n        return \"\";\r\n    }\r\n\r\n    function tokenURI(uint256 _tokenId) public override pure returns (string memory) {\r\n        return StringUtils.strConcat(baseTokenURI(), StringUtils.uint2str(_tokenId));\r\n    }\r\n\r\n    /**\r\n     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.\r\n     */\r\n    function isApprovedForAll(address owner, address operator) override\r\n        public\r\n        view\r\n        returns (bool)\r\n    {\r\n        // Whitelist OpenSea proxy contract for easy trading.\r\n        ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);\r\n        if (address(proxyRegistry.proxies(owner)) == operator) {\r\n            return true;\r\n        }\r\n\r\n        return super.isApprovedForAll(owner, operator);\r\n    }\r\n}\r\n\r\n",
   "sourcePath": "C:\\Users\\editr\\OneDrive\\Desktop\\etherprojects\\SoulSwap\\contracts\\ERC721Tradable.sol",
   "ast": {
     "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol",
@@ -70,7 +70,7 @@
           "solidity",
           "^",
           "0.8",
-          ".3"
+          ".0"
         ],
         "nodeType": "PragmaDirective",
         "src": "33:23:0"
@@ -79,7 +79,6 @@
         "absolutePath": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "file": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "id": 2,
-        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 166,
         "sourceUnit": 2143,
@@ -91,7 +90,6 @@
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
         "id": 3,
-        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 166,
         "sourceUnit": 1322,
@@ -103,7 +101,6 @@
         "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/StringUtils.sol",
         "file": "./StringUtils.sol",
         "id": 4,
-        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 166,
         "sourceUnit": 1212,
@@ -122,7 +119,6 @@
           5
         ],
         "name": "OwnableDelegateProxy",
-        "nameLocation": "213:20:0",
         "nodeType": "ContractDefinition",
         "nodes": [],
         "scope": 166,
@@ -139,7 +135,6 @@
           11
         ],
         "name": "ProxyRegistry",
-        "nameLocation": "249:13:0",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -148,7 +143,6 @@
             "id": 10,
             "mutability": "mutable",
             "name": "proxies",
-            "nameLocation": "318:7:0",
             "nodeType": "VariableDeclaration",
             "scope": 11,
             "src": "270:55:0",
@@ -257,7 +251,6 @@
           2653
         ],
         "name": "ERC721Tradable",
-        "nameLocation": "481:14:0",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -287,7 +280,6 @@
             "id": 21,
             "mutability": "mutable",
             "name": "proxyRegistryAddress",
-            "nameLocation": "565:20:0",
             "nodeType": "VariableDeclaration",
             "scope": 165,
             "src": "557:28:0",
@@ -315,7 +307,6 @@
             "id": 24,
             "mutability": "mutable",
             "name": "_currentTokenId",
-            "nameLocation": "608:15:0",
             "nodeType": "VariableDeclaration",
             "scope": 165,
             "src": "592:35:0",
@@ -359,7 +350,6 @@
             "id": 28,
             "mutability": "mutable",
             "name": "tokenSupply",
-            "nameLocation": "670:11:0",
             "nodeType": "VariableDeclaration",
             "scope": 165,
             "src": "634:47:0",
@@ -495,7 +485,6 @@
               }
             ],
             "name": "",
-            "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 35,
@@ -506,7 +495,6 @@
                   "id": 30,
                   "mutability": "mutable",
                   "name": "_name",
-                  "nameLocation": "726:5:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 46,
                   "src": "712:19:0",
@@ -533,7 +521,6 @@
                   "id": 32,
                   "mutability": "mutable",
                   "name": "_symbol",
-                  "nameLocation": "756:7:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 46,
                   "src": "742:21:0",
@@ -560,7 +547,6 @@
                   "id": 34,
                   "mutability": "mutable",
                   "name": "_proxyRegistryAddress",
-                  "nameLocation": "782:21:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 46,
                   "src": "774:29:0",
@@ -614,7 +600,6 @@
                       "id": 55,
                       "mutability": "mutable",
                       "name": "newTokenId",
-                      "nameLocation": "1113:10:0",
                       "nodeType": "VariableDeclaration",
                       "scope": 67,
                       "src": "1105:18:0",
@@ -790,7 +775,6 @@
             "modifiers": [
               {
                 "id": 52,
-                "kind": "modifierInvocation",
                 "modifierName": {
                   "id": 51,
                   "name": "onlyOwner",
@@ -803,7 +787,6 @@
               }
             ],
             "name": "mintTo",
-            "nameLocation": "1057:6:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 50,
@@ -814,7 +797,6 @@
                   "id": 49,
                   "mutability": "mutable",
                   "name": "_to",
-                  "nameLocation": "1072:3:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 68,
                   "src": "1064:11:0",
@@ -915,7 +897,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "totalSupply",
-            "nameLocation": "1403:11:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 72,
@@ -926,7 +907,6 @@
                   "id": 71,
                   "mutability": "mutable",
                   "name": "_id",
-                  "nameLocation": "1423:3:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 81,
                   "src": "1415:11:0",
@@ -960,7 +940,6 @@
                   "id": 74,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 81,
                   "src": "1449:7:0",
@@ -1043,7 +1022,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "_getNextTokenId",
-            "nameLocation": "1657:15:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 83,
@@ -1060,7 +1038,6 @@
                   "id": 85,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 91,
                   "src": "1692:7:0",
@@ -1142,7 +1119,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "_incrementTokenId",
-            "nameLocation": "1832:17:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 93,
@@ -1198,7 +1174,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "baseTokenURI",
-            "nameLocation": "1913:12:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 100,
@@ -1215,7 +1190,6 @@
                   "id": 102,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 107,
                   "src": "1957:13:0",
@@ -1417,7 +1391,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "tokenURI",
-            "nameLocation": "2017:8:0",
             "nodeType": "FunctionDefinition",
             "overrides": {
               "id": 111,
@@ -1434,7 +1407,6 @@
                   "id": 109,
                   "mutability": "mutable",
                   "name": "_tokenId",
-                  "nameLocation": "2034:8:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 126,
                   "src": "2026:16:0",
@@ -1468,7 +1440,6 @@
                   "id": 113,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 126,
                   "src": "2074:13:0",
@@ -1518,7 +1489,6 @@
                       "id": 139,
                       "mutability": "mutable",
                       "name": "proxyRegistry",
-                      "nameLocation": "2531:13:0",
                       "nodeType": "VariableDeclaration",
                       "scope": 163,
                       "src": "2517:27:0",
@@ -1870,7 +1840,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "isApprovedForAll",
-            "nameLocation": "2325:16:0",
             "nodeType": "FunctionDefinition",
             "overrides": {
               "id": 133,
@@ -1887,7 +1856,6 @@
                   "id": 129,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "2350:5:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
                   "src": "2342:13:0",
@@ -1915,7 +1883,6 @@
                   "id": 131,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "2365:8:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
                   "src": "2357:16:0",
@@ -1950,7 +1917,6 @@
                   "id": 135,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
                   "src": "2432:4:0",
@@ -2047,7 +2013,7 @@
           "solidity",
           "^",
           "0.8",
-          ".3"
+          ".0"
         ],
         "nodeType": "PragmaDirective",
         "src": "33:23:0"
@@ -2056,7 +2022,6 @@
         "absolutePath": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "file": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "id": 2,
-        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 166,
         "sourceUnit": 2143,
@@ -2068,7 +2033,6 @@
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
         "id": 3,
-        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 166,
         "sourceUnit": 1322,
@@ -2080,7 +2044,6 @@
         "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/StringUtils.sol",
         "file": "./StringUtils.sol",
         "id": 4,
-        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 166,
         "sourceUnit": 1212,
@@ -2099,7 +2062,6 @@
           5
         ],
         "name": "OwnableDelegateProxy",
-        "nameLocation": "213:20:0",
         "nodeType": "ContractDefinition",
         "nodes": [],
         "scope": 166,
@@ -2116,7 +2078,6 @@
           11
         ],
         "name": "ProxyRegistry",
-        "nameLocation": "249:13:0",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -2125,7 +2086,6 @@
             "id": 10,
             "mutability": "mutable",
             "name": "proxies",
-            "nameLocation": "318:7:0",
             "nodeType": "VariableDeclaration",
             "scope": 11,
             "src": "270:55:0",
@@ -2234,7 +2194,6 @@
           2653
         ],
         "name": "ERC721Tradable",
-        "nameLocation": "481:14:0",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -2264,7 +2223,6 @@
             "id": 21,
             "mutability": "mutable",
             "name": "proxyRegistryAddress",
-            "nameLocation": "565:20:0",
             "nodeType": "VariableDeclaration",
             "scope": 165,
             "src": "557:28:0",
@@ -2292,7 +2250,6 @@
             "id": 24,
             "mutability": "mutable",
             "name": "_currentTokenId",
-            "nameLocation": "608:15:0",
             "nodeType": "VariableDeclaration",
             "scope": 165,
             "src": "592:35:0",
@@ -2336,7 +2293,6 @@
             "id": 28,
             "mutability": "mutable",
             "name": "tokenSupply",
-            "nameLocation": "670:11:0",
             "nodeType": "VariableDeclaration",
             "scope": 165,
             "src": "634:47:0",
@@ -2472,7 +2428,6 @@
               }
             ],
             "name": "",
-            "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 35,
@@ -2483,7 +2438,6 @@
                   "id": 30,
                   "mutability": "mutable",
                   "name": "_name",
-                  "nameLocation": "726:5:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 46,
                   "src": "712:19:0",
@@ -2510,7 +2464,6 @@
                   "id": 32,
                   "mutability": "mutable",
                   "name": "_symbol",
-                  "nameLocation": "756:7:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 46,
                   "src": "742:21:0",
@@ -2537,7 +2490,6 @@
                   "id": 34,
                   "mutability": "mutable",
                   "name": "_proxyRegistryAddress",
-                  "nameLocation": "782:21:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 46,
                   "src": "774:29:0",
@@ -2591,7 +2543,6 @@
                       "id": 55,
                       "mutability": "mutable",
                       "name": "newTokenId",
-                      "nameLocation": "1113:10:0",
                       "nodeType": "VariableDeclaration",
                       "scope": 67,
                       "src": "1105:18:0",
@@ -2767,7 +2718,6 @@
             "modifiers": [
               {
                 "id": 52,
-                "kind": "modifierInvocation",
                 "modifierName": {
                   "id": 51,
                   "name": "onlyOwner",
@@ -2780,7 +2730,6 @@
               }
             ],
             "name": "mintTo",
-            "nameLocation": "1057:6:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 50,
@@ -2791,7 +2740,6 @@
                   "id": 49,
                   "mutability": "mutable",
                   "name": "_to",
-                  "nameLocation": "1072:3:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 68,
                   "src": "1064:11:0",
@@ -2892,7 +2840,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "totalSupply",
-            "nameLocation": "1403:11:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 72,
@@ -2903,7 +2850,6 @@
                   "id": 71,
                   "mutability": "mutable",
                   "name": "_id",
-                  "nameLocation": "1423:3:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 81,
                   "src": "1415:11:0",
@@ -2937,7 +2883,6 @@
                   "id": 74,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 81,
                   "src": "1449:7:0",
@@ -3020,7 +2965,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "_getNextTokenId",
-            "nameLocation": "1657:15:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 83,
@@ -3037,7 +2981,6 @@
                   "id": 85,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 91,
                   "src": "1692:7:0",
@@ -3119,7 +3062,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "_incrementTokenId",
-            "nameLocation": "1832:17:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 93,
@@ -3175,7 +3117,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "baseTokenURI",
-            "nameLocation": "1913:12:0",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 100,
@@ -3192,7 +3133,6 @@
                   "id": 102,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 107,
                   "src": "1957:13:0",
@@ -3394,7 +3334,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "tokenURI",
-            "nameLocation": "2017:8:0",
             "nodeType": "FunctionDefinition",
             "overrides": {
               "id": 111,
@@ -3411,7 +3350,6 @@
                   "id": 109,
                   "mutability": "mutable",
                   "name": "_tokenId",
-                  "nameLocation": "2034:8:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 126,
                   "src": "2026:16:0",
@@ -3445,7 +3383,6 @@
                   "id": 113,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 126,
                   "src": "2074:13:0",
@@ -3495,7 +3432,6 @@
                       "id": 139,
                       "mutability": "mutable",
                       "name": "proxyRegistry",
-                      "nameLocation": "2531:13:0",
                       "nodeType": "VariableDeclaration",
                       "scope": 163,
                       "src": "2517:27:0",
@@ -3847,7 +3783,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "isApprovedForAll",
-            "nameLocation": "2325:16:0",
             "nodeType": "FunctionDefinition",
             "overrides": {
               "id": 133,
@@ -3864,7 +3799,6 @@
                   "id": 129,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "2350:5:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
                   "src": "2342:13:0",
@@ -3892,7 +3826,6 @@
                   "id": 131,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "2365:8:0",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
                   "src": "2357:16:0",
@@ -3927,7 +3860,6 @@
                   "id": 135,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 164,
                   "src": "2432:4:0",
@@ -3967,11 +3899,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.3+commit.8d00100c.Emscripten.clang"
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-04-28T23:51:10.180Z",
+  "updatedAt": "2021-04-29T05:32:44.556Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -20,6 +20,12 @@
   },
   "homepage": "https://github.com/editrocchio/ethertaph#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.0.0"
+    "@openzeppelin/contracts": "^4.0.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "ethers": "^5.1.4",
+    "hardhat": "^2.2.1"
   }
 }

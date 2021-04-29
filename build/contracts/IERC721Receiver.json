@@ -36,7 +36,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onERC721Received\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for any contract that wants to support safeTransfers from ERC721 asset contracts.\",\"kind\":\"dev\",\"methods\":{\"onERC721Received(address,address,uint256,bytes)\":{\"details\":\"Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`.\"}},\"title\":\"ERC721 token receiver interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":\"IERC721Receiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onERC721Received\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for any contract that wants to support safeTransfers from ERC721 asset contracts.\",\"kind\":\"dev\",\"methods\":{\"onERC721Received(address,address,uint256,bytes)\":{\"details\":\"Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`.\"}},\"title\":\"ERC721 token receiver interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":\"IERC721Receiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -85,7 +85,6 @@
           2276
         ],
         "name": "IERC721Receiver",
-        "nameLocation": "221:15:10",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -101,7 +100,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "onERC721Received",
-            "nameLocation": "742:16:10",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 2271,
@@ -112,7 +110,6 @@
                   "id": 2264,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "767:8:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "759:16:10",
@@ -140,7 +137,6 @@
                   "id": 2266,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "785:4:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "777:12:10",
@@ -168,7 +164,6 @@
                   "id": 2268,
                   "mutability": "mutable",
                   "name": "tokenId",
-                  "nameLocation": "799:7:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "791:15:10",
@@ -195,7 +190,6 @@
                   "id": 2270,
                   "mutability": "mutable",
                   "name": "data",
-                  "nameLocation": "823:4:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "808:19:10",
@@ -229,7 +223,6 @@
                   "id": 2273,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "847:6:10",
@@ -306,7 +299,6 @@
           2276
         ],
         "name": "IERC721Receiver",
-        "nameLocation": "221:15:10",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -322,7 +314,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "onERC721Received",
-            "nameLocation": "742:16:10",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 2271,
@@ -333,7 +324,6 @@
                   "id": 2264,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "767:8:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "759:16:10",
@@ -361,7 +351,6 @@
                   "id": 2266,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "785:4:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "777:12:10",
@@ -389,7 +378,6 @@
                   "id": 2268,
                   "mutability": "mutable",
                   "name": "tokenId",
-                  "nameLocation": "799:7:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "791:15:10",
@@ -416,7 +404,6 @@
                   "id": 2270,
                   "mutability": "mutable",
                   "name": "data",
-                  "nameLocation": "823:4:10",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "808:19:10",
@@ -450,7 +437,6 @@
                   "id": 2273,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 2275,
                   "src": "847:6:10",
@@ -490,11 +476,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.3+commit.8d00100c.Emscripten.clang"
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-04-28T23:51:10.254Z",
+  "updatedAt": "2021-04-29T04:24:46.521Z",
   "devdoc": {
     "details": "Interface for any contract that wants to support safeTransfers from ERC721 asset contracts.",
     "kind": "dev",

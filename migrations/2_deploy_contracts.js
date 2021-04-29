@@ -1,16 +1,16 @@
 const SoulFragment = artifacts.require("./SoulFragment.sol");
 const SoulFragmentFactory = artifacts.require("./SoulFragmentFactory.sol");
-const SoulFragmentLootBox = artifacts.require("./SoulFragmentLootBox.sol");
+const SoulFragmentLootBox = artifacts.require("./SoulLootBox.sol");
 
 // If you want to hardcode what deploys, comment out process.env.X and use
 // true/false;
-const DEPLOY_ALL = process.env.DEPLOY_ALL;
+const DEPLOY_ALL = true; /*process.env.DEPLOY_ALL;*/
 const DEPLOY_ACCESSORIES_SALE = false; /*process.env.DEPLOY_ACCESSORIES_SALE || DEPLOY_ALL;*/
 const DEPLOY_ACCESSORIES = false /*process.env.DEPLOY_ACCESSORIES || DEPLOY_ACCESSORIES_SALE || DEPLOY_ALL;*/
-const DEPLOY_SOUL_FRAGMENTS_SALE = process.env.DEPLOY_SOUL_FRAGMENTS_SALE || DEPLOY_ALL;
+const DEPLOY_SOUL_FRAGMENTS_SALE = true; /*process.env.DEPLOY_SOUL_FRAGMENTS_SALE || DEPLOY_ALL;*/
 // Note that we will default to this unless DEPLOY_ACCESSORIES is set.
 // This is to keep the historical behavior of this migration.
-const DEPLOY_SOUL_FRAGMENTS = process.env.DEPLOY_SOUL_FRAGMENTS || DEPLOY_SOUL_FRAGMENTS_SALE || DEPLOY_ALL || (! DEPLOY_ACCESSORIES);
+const DEPLOY_SOUL_FRAGMENTS = true; /*process.env.DEPLOY_SOUL_FRAGMENTS || DEPLOY_SOUL_FRAGMENTS_SALE || DEPLOY_ALL || (! DEPLOY_ACCESSORIES);*/
 
 module.exports = async (deployer, network, addresses) => {
   // OpenSea proxy registry addresses for rinkeby and mainnet.
