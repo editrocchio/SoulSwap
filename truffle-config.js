@@ -23,7 +23,7 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-const { alchemyApiKey, mnemonic, privateKey, address } = require('./secrets/secrets.json');
+const { ALCHEMY_API_KEY, PRIVATE_KEY } = require('./secrets/secrets.json');
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -37,9 +37,9 @@ module.exports = {
   networks: {
     rinkeby: {
       provider: function () {
-        return new HDWalletProvider(privateKey, `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,);
+        return new HDWalletProvider(PRIVATE_KEY, ALCHEMY_API_KEY);
       },
-      url: `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,
+      url: ALCHEMY_API_KEY,
       network_id: "*",
       gas: 5000000,
     }

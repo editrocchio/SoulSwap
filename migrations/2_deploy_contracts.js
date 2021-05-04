@@ -31,45 +31,45 @@ module.exports = async (deployer, network, addresses) => {
     await soulFrag.transferOwnership(SoulFragmentFactory.address);
   }
 
-  if (DEPLOY_ACCESSORIES) {
-    await deployer.deploy(
-      SoulFragmentAccessory,
-      proxyRegistryAddress,
-      { gas: 5000000 }
-    );
-    const accessories = await SoulFragmentAccessory.deployed();
-    await setupSoulFragmentAccessories.setupAccessory(
-      accessories,
-      addresses[0]
-    );
-  }
+  // if (DEPLOY_ACCESSORIES) {
+  //   await deployer.deploy(
+  //     SoulFragmentAccessory,
+  //     proxyRegistryAddress,
+  //     { gas: 5000000 }
+  //   );
+  //   const accessories = await SoulFragmentAccessory.deployed();
+  //   await setupSoulFragmentAccessories.setupAccessory(
+  //     accessories,
+  //     addresses[0]
+  //   );
+  // }
 
-  if (DEPLOY_ACCESSORIES_SALE) {
-    await deployer.deploy(LootBoxRandomness);
-    await deployer.link(LootBoxRandomness, SoulFragmentAccessoryLootBox);
-    await deployer.deploy(
-      SoulFragmentAccessoryLootBox,
-      proxyRegistryAddress,
-      { gas: 6721975 }
-    );
-    const lootBox = await SoulFragmentAccessoryLootBox.deployed();
-    await deployer.deploy(
-      SoulFragmentAccessoryFactory,
-      proxyRegistryAddress,
-      SoulFragmentAccessory.address,
-      SoulFragmentAccessoryLootBox.address,
-      { gas: 5000000 }
-    );
-    const accessories = await SoulFragmentAccessory.deployed();
-    const factory = await SoulFragmentAccessoryFactory.deployed();
-    await accessories.setApprovalForAll(
-      addresses[0],
-      SoulFragmentAccessoryFactory.address
-    );
-    await accessories.transferOwnership(
-      SoulFragmentAccessoryFactory.address
-    );
-    await setupSoulFragmentAccessories.setupAccessoryLootBox(lootBox, factory);
-    await lootBox.transferOwnership(factory.address);
-  }
+  // if (DEPLOY_ACCESSORIES_SALE) {
+  //   await deployer.deploy(LootBoxRandomness);
+  //   await deployer.link(LootBoxRandomness, SoulFragmentAccessoryLootBox);
+  //   await deployer.deploy(
+  //     SoulFragmentAccessoryLootBox,
+  //     proxyRegistryAddress,
+  //     { gas: 6721975 }
+  //   );
+  //   const lootBox = await SoulFragmentAccessoryLootBox.deployed();
+  //   await deployer.deploy(
+  //     SoulFragmentAccessoryFactory,
+  //     proxyRegistryAddress,
+  //     SoulFragmentAccessory.address,
+  //     SoulFragmentAccessoryLootBox.address,
+  //     { gas: 5000000 }
+  //   );
+  //   const accessories = await SoulFragmentAccessory.deployed();
+  //   const factory = await SoulFragmentAccessoryFactory.deployed();
+  //   await accessories.setApprovalForAll(
+  //     addresses[0],
+  //     SoulFragmentAccessoryFactory.address
+  //   );
+  //   await accessories.transferOwnership(
+  //     SoulFragmentAccessoryFactory.address
+  //   );
+  //   await setupSoulFragmentAccessories.setupAccessoryLootBox(lootBox, factory);
+  //   await lootBox.transferOwnership(factory.address);
+  // }
 };

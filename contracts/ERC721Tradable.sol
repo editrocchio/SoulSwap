@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "./StringUtils.sol";
 
 contract OwnableDelegateProxy {}
@@ -15,10 +16,11 @@ contract ProxyRegistry {
  * @title ERC721Tradable
  * ERC721Tradable - ERC721 contract that whitelists a trading address, and has minting functionality.
  */
-contract ERC721Tradable is ERC721, Ownable {
+contract ERC721Tradable is ERC721, Ownable, ERC721URIStorage  {
     using StringUtils for string;
     address proxyRegistryAddress;
-    uint256 private _currentTokenId = 0;
+    uint256 private tokenCounter;
+
     mapping (uint256 => uint256) public tokenSupply;
 
     constructor(
@@ -27,6 +29,7 @@ contract ERC721Tradable is ERC721, Ownable {
         address _proxyRegistryAddress
     ) public ERC721(_name, _symbol) {
         proxyRegistryAddress = _proxyRegistryAddress;
+        tokenCounter = 0;
     }
 
     /**
@@ -34,9 +37,18 @@ contract ERC721Tradable is ERC721, Ownable {
      * @param _to address of the future owner of the token
      */
     function mintTo(address _to) public onlyOwner {
-        uint256 newTokenId = _getNextTokenId();
+        uint256 newTokenId = getTokenCounter();
         _mint(_to, newTokenId);
         _incrementTokenId();
+    }
+
+     function mintToken(address to, string memory _tokenURI) public returns (uint256){
+        uint256 newTokenId = tokenCounter;
+        _safeMint(to, newTokenId);
+        _setTokenURI(newTokenId, _tokenURI);
+        tokenCounter++;
+
+        return newTokenId;
     }
 
     
@@ -50,26 +62,39 @@ contract ERC721Tradable is ERC721, Ownable {
     }
 
     /**
-     * @dev calculates the next token ID based on value of _currentTokenId
+     * @dev calculates the next token ID based on value of tokenCounter
      * @return uint256 for the next token ID
      */
-    function _getNextTokenId() private returns (uint256) {
-        return _currentTokenId++;
+    function getTokenCounter() private returns (uint256) {
+        return tokenCounter;
     }
 
     /**
-     * @dev increments the value of _currentTokenId
+     * @dev increments the value of tokenCounter
      */
     function _incrementTokenId() private {
-        _currentTokenId++;
+        tokenCounter++;
     }
 
-    function baseTokenURI() public virtual pure returns (string memory) {
-        return "";
+    function safeMint(address to, uint256 tokenId) public onlyOwner {
+        _safeMint(to, tokenId);
     }
 
-    function tokenURI(uint256 _tokenId) public override pure returns (string memory) {
-        return StringUtils.strConcat(baseTokenURI(), StringUtils.uint2str(_tokenId));
+    function _baseURI() internal pure override returns (string memory) {
+        return "https://gateway.pinata.cloud/ipfs/";
+    }
+
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
     }
 
     /**

@@ -1,0 +1,30 @@
+{
+  "attributes": [
+    {
+      "display_type": "date", 
+      "trait_type": "birthday", 
+      "value": 1620027925
+    },
+    {
+      "display_type": "date", 
+      "trait_type": "died", 
+      "value": 1620027925
+    },
+    {
+      "trait_type": "Holiness", 
+      "value": 100
+    }, 
+    {
+      "trait_type": "Personality", 
+      "value": "Calm"
+    }, 
+    {
+      "display_type": "number", 
+      "trait_type": "Fragment", 
+      "value": 1
+    }
+  ], 
+  "description":"\"Fear not, my child\" - Jesus Christ",
+  "image": "https://gateway.pinata.cloud/ipfs/QmYr91Jg7XmH4proZbyWdS9zHiAwJg7CNpfYh66SMz1XKC?filename=Spas_vsederzhitel_sinay.jpg",
+  "name": "Jesus Christ"
+}

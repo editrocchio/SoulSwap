@@ -19,7 +19,7 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     address public proxyRegistryAddress;
     address public nftAddress;
     address public lootBoxNftAddress;
-    string public baseURI = "https://souls-api.opensea.io/api/factory/";
+    string public baseURI = "https://gateway.pinata.cloud/ipfs/";
 
     /*
      * Enforce the existence of only 100 OpenSea souls.
@@ -38,9 +38,9 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     constructor(address _proxyRegistryAddress, address _nftAddress) public {
         proxyRegistryAddress = _proxyRegistryAddress;
         nftAddress = _nftAddress;
-        lootBoxNftAddress = address(
-            new SoulLootBox(_proxyRegistryAddress, address(this))
-        );
+        // lootBoxNftAddress = address(
+        //     new SoulLootBox(_proxyRegistryAddress, address(this))
+        // );
 
         fireTransferEvents(address(0), owner());
     }
@@ -102,6 +102,13 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         }
     }
 
+    function mintTokenURI(uint256 _optionId, string memory _tokenURI, address _toAddress) public {
+        SoulFragment openSeaSoul = SoulFragment(nftAddress);
+        if (_optionId == SINGLE_SOUL_OPTION) {
+            openSeaSoul.mintToken(_toAddress, _tokenURI);
+        }
+    }
+
     function canMint(uint256 _optionId) public override view returns (bool) {
         if (_optionId >= NUM_OPTIONS) {
             return false;
@@ -126,6 +133,10 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
 
     function tokenURI(uint256 _optionId) external override view returns (string memory) {
         return StringUtils.strConcat(baseURI, StringUtils.uint2str(_optionId));
+    }
+
+    function tokenURI(string memory metadataURI) external view returns (string memory) {
+        return StringUtils.strConcat(baseURI, metadataURI);
     }
 
     /**

@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 import "./ERC721Tradable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title SoulFragment
@@ -10,14 +9,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  */
 contract SoulFragment is ERC721Tradable {
     constructor(address _proxyRegistryAddress) public
-        ERC721Tradable("SoulFragment", "SOUL", _proxyRegistryAddress)
+        ERC721Tradable("SoulFragment", "SOULS", _proxyRegistryAddress)
     {}
 
-    function baseTokenURI() public override pure returns (string memory) {
-        return "https://soul-fragments-api.opensea.io/api/soul-fragment/";
-    }
+    // function baseTokenURI() public override pure returns (string memory) {
+    //     return "https://gateway.pinata.cloud/ipfs/";
+    // }
 
-    function contractURI() public pure returns (string memory) {
-        return "https://soul-fragments-api.opensea.io/contract/opensea-soul-fragments";
-    }
+    // function contractURI() public pure returns (string memory) {
+    //     return "https://soul-fragments-api.opensea.io/contract/opensea-soul-fragments";
+    // }
 }

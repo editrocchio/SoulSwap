@@ -40,7 +40,7 @@ contract SoulLootBox is ERC721Tradable {
        // _burn(msg.sender, _tokenId);
     }
 
-    function baseTokenURI() public override pure returns (string memory) {
+    function baseTokenURI() public pure returns (string memory) {
         return "https://souls-api.opensea.io/api/box/";
     }
 
