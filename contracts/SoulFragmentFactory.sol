@@ -10,30 +10,32 @@ import './SoulLootBox.sol';
 contract SoulFragmentFactory is IFactoryERC721, Ownable {
     using Strings for string;
 
-    event Transfer(
-        address indexed from,
-        address indexed to,
-        uint256 indexed tokenId
-    );
+    // event Transfer(
+    //     address indexed from,
+    //     address indexed to,
+    //     uint256 indexed tokenId
+    // );
 
     address public proxyRegistryAddress;
     address public nftAddress;
-    address public lootBoxNftAddress;
     string public baseURI = "https://gateway.pinata.cloud/ipfs/";
 
-    /*
-     * Enforce the existence of only 100 OpenSea souls.
-     */
-    uint256 SOUL_SUPPLY = 100;
+    mapping (string => uint256) public maxFragmentSupply; 
+    mapping (string => uint256) public currentFragmentCount; 
 
-    /*
-     * Three different options for minting Souls (basic, premium, and gold).
-     */
-    uint256 NUM_OPTIONS = 3;
-    uint256 SINGLE_SOUL_OPTION = 0;
-    uint256 MULTIPLE_SOUL_OPTION = 1;
-    uint256 LOOTBOX_OPTION = 2;
-    uint256 NUM_SOULS_IN_MULTIPLE_SOUL_OPTION = 4;
+    // /*
+    //  * Enforce the existence of only 100 OpenSea souls.
+    //  */
+    // uint256 SOUL_SUPPLY = 100;
+
+    // /*
+    //  * Three different options for minting Souls (basic, premium, and gold).
+    //  */
+    // uint256 NUM_OPTIONS = 3;
+    // uint256 SINGLE_SOUL_OPTION = 0;
+    // uint256 MULTIPLE_SOUL_OPTION = 1;
+    // uint256 LOOTBOX_OPTION = 2;
+    // uint256 NUM_SOULS_IN_MULTIPLE_SOUL_OPTION = 4;
 
     constructor(address _proxyRegistryAddress, address _nftAddress) public {
         proxyRegistryAddress = _proxyRegistryAddress;
@@ -42,7 +44,7 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         //     new SoulLootBox(_proxyRegistryAddress, address(this))
         // );
 
-        fireTransferEvents(address(0), owner());
+     //   fireTransferEvents(address(0), owner());
     }
 
     function name() external override view returns (string memory) {
@@ -58,77 +60,91 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     }
 
     function numOptions() public override view returns (uint256) {
-        return NUM_OPTIONS;
+        //return NUM_OPTIONS;
+        return 0;
     }
 
     function transferOwnership(address newOwner) public override onlyOwner {
         address _prevOwner = owner();
         super.transferOwnership(newOwner);
-        fireTransferEvents(_prevOwner, newOwner);
+     //   fireTransferEvents(_prevOwner, newOwner);
     }
 
-    function fireTransferEvents(address _from, address _to) private {
-        for (uint256 i = 0; i < NUM_OPTIONS; i++) {
-            emit Transfer(_from, _to, i);
-        }
-    }
+    // function fireTransferEvents(address _from, address _to) private {
+    //     for (uint256 i = 0; i < NUM_OPTIONS; i++) {
+    //         emit Transfer(_from, _to, i);
+    //     }
+    // }
 
     function mint(uint256 _optionId, address _toAddress) public override {
         // Must be sent from the owner proxy or owner.
-        ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);
-        assert(
-            address(proxyRegistry.proxies(owner())) == msg.sender ||
-                owner() == msg.sender ||
-                msg.sender == lootBoxNftAddress
-        );
-        require(canMint(_optionId));
+        // ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);
+        // assert(
+        //     address(proxyRegistry.proxies(owner())) == msg.sender ||
+        //         owner() == msg.sender ||
+        //         msg.sender == lootBoxNftAddress
+        // );
+        // require(canMint(_optionId));
 
-        SoulFragment openSeaSoul = SoulFragment(nftAddress);
-        if (_optionId == SINGLE_SOUL_OPTION) {
-            openSeaSoul.mintTo(_toAddress);
-        } else if (_optionId == MULTIPLE_SOUL_OPTION) {
-            for (
-                uint256 i = 0;
-                i < NUM_SOULS_IN_MULTIPLE_SOUL_OPTION;
-                i++
-            ) {
-                openSeaSoul.mintTo(_toAddress);
-            }
-        } else if (_optionId == LOOTBOX_OPTION) {
-            SoulLootBox openSeaSoulLootBox = SoulLootBox(
-                lootBoxNftAddress
-            );
-            openSeaSoulLootBox.mintTo(_toAddress);
-        }
+        // SoulFragment openSeaSoul = SoulFragment(nftAddress);
+        // if (_optionId == SINGLE_SOUL_OPTION) {
+        //     openSeaSoul.mintTo(_toAddress);
+        // } else if (_optionId == MULTIPLE_SOUL_OPTION) {
+        //     for (
+        //         uint256 i = 0;
+        //         i < NUM_SOULS_IN_MULTIPLE_SOUL_OPTION;
+        //         i++
+        //     ) {
+        //         openSeaSoul.mintTo(_toAddress);
+        //     }
+        // } else if (_optionId == LOOTBOX_OPTION) {
+        //     SoulLootBox openSeaSoulLootBox = SoulLootBox(
+        //         lootBoxNftAddress
+        //     );
+        //     openSeaSoulLootBox.mintTo(_toAddress);
+        // }
     }
 
-    function mintTokenURI(uint256 _optionId, string memory _tokenURI, address _toAddress) public {
+    //Can only ever be set once
+    function setMaxFragmentSupply(string memory soulName, uint total) public {
+        require(maxFragmentSupply[soulName] == 0);
+        maxFragmentSupply[soulName] = total;
+    }
+
+    function mintTokenURI(string memory _tokenURI, address _toAddress, uint totalRequest, string memory soulName) public {
+        require(_canMint(soulName, totalRequest));
         SoulFragment openSeaSoul = SoulFragment(nftAddress);
-        if (_optionId == SINGLE_SOUL_OPTION) {
-            openSeaSoul.mintToken(_toAddress, _tokenURI);
+        openSeaSoul.mintToken(_toAddress, _tokenURI);
+    }
+
+    function _canMint(string memory soulName, uint totalRequest) public view returns (bool) {
+        if(totalRequest <= (maxFragmentSupply[soulName] - currentFragmentCount[soulName])) {
+            return false;
         }
+        return true;
     }
 
     function canMint(uint256 _optionId) public override view returns (bool) {
-        if (_optionId >= NUM_OPTIONS) {
-            return false;
-        }
+        return false;
+        // if (_optionId >= NUM_OPTIONS) {
+        //     return false;
+        // }
 
-        SoulFragment openSeaSoul = SoulFragment(nftAddress);
-        uint256 soulSupply = openSeaSoul.totalSupply(_optionId);
+        // SoulFragment openSeaSoul = SoulFragment(nftAddress);
+        // uint256 soulSupply = openSeaSoul.totalSupply(_optionId);
 
-        uint256 numItemsAllocated = 0;
-        if (_optionId == SINGLE_SOUL_OPTION) {
-            numItemsAllocated = 1;
-        } else if (_optionId == MULTIPLE_SOUL_OPTION) {
-            numItemsAllocated = NUM_SOULS_IN_MULTIPLE_SOUL_OPTION;
-        } else if (_optionId == LOOTBOX_OPTION) {
-            SoulLootBox openSeaSoulLootBox = SoulLootBox(
-                lootBoxNftAddress
-            );
-            numItemsAllocated = openSeaSoulLootBox.itemsPerLootbox();
-        }
-        return soulSupply < (SOUL_SUPPLY - numItemsAllocated);
+        // uint256 numItemsAllocated = 0;
+        // if (_optionId == SINGLE_SOUL_OPTION) {
+        //     numItemsAllocated = 1;
+        // } else if (_optionId == MULTIPLE_SOUL_OPTION) {
+        //     numItemsAllocated = NUM_SOULS_IN_MULTIPLE_SOUL_OPTION;
+        // } else if (_optionId == LOOTBOX_OPTION) {
+        //     SoulLootBox openSeaSoulLootBox = SoulLootBox(
+        //         lootBoxNftAddress
+        //     );
+        //     numItemsAllocated = openSeaSoulLootBox.itemsPerLootbox();
+        // }
+        // return soulSupply < (SOUL_SUPPLY - numItemsAllocated);
     }
 
     function tokenURI(uint256 _optionId) external override view returns (string memory) {
@@ -139,17 +155,17 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         return StringUtils.strConcat(baseURI, metadataURI);
     }
 
-    /**
-     * Hack to get things to work automatically on OpenSea.
-     * Use transferFrom so the frontend doesn't have to worry about different method names.
-     */
-    function transferFrom(
-        address _from,
-        address _to,
-        uint256 _tokenId
-    ) public {
-        mint(_tokenId, _to);
-    }
+    // /**
+    //  * Hack to get things to work automatically on OpenSea.
+    //  * Use transferFrom so the frontend doesn't have to worry about different method names.
+    //  */
+    // function transferFrom(
+    //     address _from,
+    //     address _to,
+    //     uint256 _tokenId
+    // ) public {
+    //     mint(_tokenId, _to);
+    // }
 
     /**
      * Hack to get things to work automatically on OpenSea.

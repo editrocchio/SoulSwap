@@ -6,9 +6,12 @@ const web3 = require("web3");
 const NFT_ABI = JSON.parse(fs.readFileSync(__dirname + "\\build\\contracts\\SoulFragment.json", 'utf-8')).abi;
 const FACTORY_ABI = JSON.parse(fs.readFileSync(__dirname + '\\build\\contracts\\SoulFragmentFactory.json')).abi;
 
-const NUM_FRAGMENTS = 1;
+const NUM_FRAGMENTS = 2;
+const MAX_FRAGMENTS = 3;
+const SOUL_NAME = "Jesus Christ"
+let newSoul = true;
 //const NUM_LOOTBOXES = 4;
-const DEFAULT_OPTION_ID = 0;
+//const DEFAULT_OPTION_ID = 0;
 //const LOOTBOX_OPTION_ID = 2;
 
 const TOKEN_URI = "QmYkx4zrfZJz54GNJoa4zy8WUSpdzQayUvVYYaetSogC5P?filename=ipfs.json";
@@ -32,10 +35,15 @@ const main = async () => {
       { gasLimit: "1000000" }
     );
 
+    if(newSoul) {
+      factoryContract.methods.setMaxFragmentSupply(SOUL_NAME, MAX_FRAGMENTS);
+    }
+
    // SoulFragments issued directly to the owner.
     for (var i = 0; i < NUM_FRAGMENTS; i++) {
       const result = await factoryContract.methods
-        .mintTokenURI(DEFAULT_OPTION_ID, TOKEN_URI, OWNER_ADDRESS)
+        .mintTokenURI(TOKEN_URI, OWNER_ADDRESS, NUM_FRAGMENTS,
+          SOUL_NAME)
         .send({ from: OWNER_ADDRESS });
       console.log("Minted FRAGMENT. Transaction: " + result.transactionHash);
     }

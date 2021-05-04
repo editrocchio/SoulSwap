@@ -12,7 +12,7 @@ contract ProxyRegistry {
     mapping(address => OwnableDelegateProxy) public proxies;
 }
 
-/**
+/**-
  * @title ERC721Tradable
  * ERC721Tradable - ERC721 contract that whitelists a trading address, and has minting functionality.
  */
@@ -20,8 +20,6 @@ contract ERC721Tradable is ERC721, Ownable, ERC721URIStorage  {
     using StringUtils for string;
     address proxyRegistryAddress;
     uint256 private tokenCounter;
-
-    mapping (uint256 => uint256) public tokenSupply;
 
     constructor(
         string memory _name,
@@ -49,16 +47,6 @@ contract ERC721Tradable is ERC721, Ownable, ERC721URIStorage  {
         tokenCounter++;
 
         return newTokenId;
-    }
-
-    
-    /**
-    * @dev Returns the total quantity for a token ID
-    * @param _id uint256 ID of the token to query
-    * @return amount of token in existence
-    */
-    function totalSupply(uint256 _id) public view returns (uint256) {
-        return tokenSupply[_id];
     }
 
     /**
