@@ -20,8 +20,8 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     address public nftAddress;
     string public baseURI = "https://gateway.pinata.cloud/ipfs/";
 
-    mapping (string => uint256) public maxFragmentSupply; 
-    mapping (string => uint256) public currentFragmentCount; 
+    mapping (bytes32 => uint) public maxFragmentSupply; 
+    mapping (bytes32 => uint) public currentFragmentCount; 
 
     // /*
     //  * Enforce the existence of only 100 OpenSea souls.
@@ -48,11 +48,11 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     }
 
     function name() external override view returns (string memory) {
-        return "OpenSea Soul Item Sale";
+        return "SoulFragment Sale";
     }
 
     function symbol() external override view returns (string memory) {
-        return "SOUL";
+        return "SOULS";
     }
 
     function supportsFactoryInterface() public override view returns (bool) {
@@ -107,21 +107,30 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
 
     //Can only ever be set once
     function setMaxFragmentSupply(string memory soulName, uint total) public {
-        require(maxFragmentSupply[soulName] == 0);
-        maxFragmentSupply[soulName] = total;
+        bytes32 hashed = keccak256(abi.encode(soulName));
+        if(maxFragmentSupply[hashed] == 0) {
+            maxFragmentSupply[hashed] = total;
+        }
+    }
+
+    function getMaxFragmentSupply(string memory soulName) public view returns (uint)  {
+        bytes32 hashed = keccak256(abi.encode(soulName));
+        return maxFragmentSupply[hashed];
     }
 
     function mintTokenURI(string memory _tokenURI, address _toAddress, uint totalRequest, string memory soulName) public {
-        require(_canMint(soulName, totalRequest));
+        bytes32 hashed = keccak256(abi.encode(soulName));
+        require(_canMint(hashed, totalRequest), "request is higher than the max supply");
         SoulFragment openSeaSoul = SoulFragment(nftAddress);
         openSeaSoul.mintToken(_toAddress, _tokenURI);
+        currentFragmentCount[hashed]++;
     }
 
-    function _canMint(string memory soulName, uint totalRequest) public view returns (bool) {
-        if(totalRequest <= (maxFragmentSupply[soulName] - currentFragmentCount[soulName])) {
-            return false;
+    function _canMint(bytes32 hashedSoulName, uint totalRequest) public view returns (bool) {
+        if(totalRequest <= (maxFragmentSupply[hashedSoulName] - currentFragmentCount[hashedSoulName])) {
+            return true;
         }
-        return true;
+        return false;
     }
 
     function canMint(uint256 _optionId) public override view returns (bool) {

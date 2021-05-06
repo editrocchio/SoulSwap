@@ -141,7 +141,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -160,7 +161,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -184,7 +186,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -234,7 +237,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -247,7 +251,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -266,7 +271,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -379,7 +385,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -392,7 +399,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -411,7 +419,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -16601,40 +16610,40 @@
     "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/SoulFragment.sol",
     "exportedSymbols": {
       "Address": [
-        2625
+        2753
       ],
       "Context": [
-        2648
+        2776
       ],
       "ERC165": [
-        2875
+        3003
       ],
       "ERC721": [
-        2009
+        2137
       ],
       "ERC721Tradable": [
         210
       ],
       "ERC721URIStorage": [
-        2271
+        2399
       ],
       "IERC165": [
-        2887
+        3015
       ],
       "IERC721": [
-        2125
+        2253
       ],
       "IERC721Enumerable": [
-        2302
+        2430
       ],
       "IERC721Metadata": [
-        2329
+        2457
       ],
       "IERC721Receiver": [
-        2143
+        2271
       ],
       "Ownable": [
-        1188
+        1316
       ],
       "OwnableDelegateProxy": [
         6
@@ -16646,10 +16655,10 @@
         338
       ],
       "StringUtils": [
-        1078
+        1206
       ],
       "Strings": [
-        2851
+        2979
       ]
     },
     "id": 339,
@@ -16696,14 +16705,14 @@
         ],
         "contractDependencies": [
           210,
-          1188,
-          2009,
-          2125,
-          2271,
-          2329,
-          2648,
-          2875,
-          2887
+          1316,
+          2137,
+          2253,
+          2399,
+          2457,
+          2776,
+          3003,
+          3015
         ],
         "contractKind": "contract",
         "documentation": {
@@ -16717,14 +16726,14 @@
         "linearizedBaseContracts": [
           338,
           210,
-          2271,
-          1188,
-          2009,
-          2329,
-          2125,
-          2875,
-          2887,
-          2648
+          2399,
+          1316,
+          2137,
+          2457,
+          2253,
+          3003,
+          3015,
+          2776
         ],
         "name": "SoulFragment",
         "nodeType": "ContractDefinition",
@@ -16858,40 +16867,40 @@
     "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/SoulFragment.sol",
     "exportedSymbols": {
       "Address": [
-        2625
+        2753
       ],
       "Context": [
-        2648
+        2776
       ],
       "ERC165": [
-        2875
+        3003
       ],
       "ERC721": [
-        2009
+        2137
       ],
       "ERC721Tradable": [
         210
       ],
       "ERC721URIStorage": [
-        2271
+        2399
       ],
       "IERC165": [
-        2887
+        3015
       ],
       "IERC721": [
-        2125
+        2253
       ],
       "IERC721Enumerable": [
-        2302
+        2430
       ],
       "IERC721Metadata": [
-        2329
+        2457
       ],
       "IERC721Receiver": [
-        2143
+        2271
       ],
       "Ownable": [
-        1188
+        1316
       ],
       "OwnableDelegateProxy": [
         6
@@ -16903,10 +16912,10 @@
         338
       ],
       "StringUtils": [
-        1078
+        1206
       ],
       "Strings": [
-        2851
+        2979
       ]
     },
     "id": 339,
@@ -16953,14 +16962,14 @@
         ],
         "contractDependencies": [
           210,
-          1188,
-          2009,
-          2125,
-          2271,
-          2329,
-          2648,
-          2875,
-          2887
+          1316,
+          2137,
+          2253,
+          2399,
+          2457,
+          2776,
+          3003,
+          3015
         ],
         "contractKind": "contract",
         "documentation": {
@@ -16974,14 +16983,14 @@
         "linearizedBaseContracts": [
           338,
           210,
-          2271,
-          1188,
-          2009,
-          2329,
-          2125,
-          2875,
-          2887,
-          2648
+          2399,
+          1316,
+          2137,
+          2457,
+          2253,
+          3003,
+          3015,
+          2776
         ],
         "name": "SoulFragment",
         "nodeType": "ContractDefinition",
@@ -17214,12 +17223,13 @@
         }
       },
       "links": {},
-      "address": "0xe54019683A49d18e4b9E9D9E37c0d1BE7b582a18",
-      "transactionHash": "0xc6cb370b2697ba53302558bbb6ffe386f39de9f658796d2d64f2d7fbbb7c0bf6"
+      "address": "0x2331d3dEeBeCA5Ff84Ea49282Aba6f744c84E8E4",
+      "transactionHash": "0xd69c334a4f3bb9169ef40d63e7a7f1e62dd4555b292250f93519afae2e7b018f"
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-05-04T06:35:51.784Z",
+  "updatedAt": "2021-05-06T05:58:35.212Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
