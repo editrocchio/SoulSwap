@@ -15,40 +15,40 @@
     "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol",
     "exportedSymbols": {
       "Address": [
-        2753
+        2700
       ],
       "Context": [
-        2776
+        2723
       ],
       "ERC165": [
-        3003
+        2950
       ],
       "ERC721": [
-        2137
+        2084
       ],
       "ERC721Tradable": [
         210
       ],
       "ERC721URIStorage": [
-        2399
+        2346
       ],
       "IERC165": [
-        3015
+        2962
       ],
       "IERC721": [
-        2253
+        2200
       ],
       "IERC721Enumerable": [
-        2430
+        2377
       ],
       "IERC721Metadata": [
-        2457
+        2404
       ],
       "IERC721Receiver": [
-        2271
+        2218
       ],
       "Ownable": [
-        1316
+        1263
       ],
       "OwnableDelegateProxy": [
         6
@@ -57,10 +57,10 @@
         12
       ],
       "StringUtils": [
-        1206
+        1153
       ],
       "Strings": [
-        2979
+        2926
       ]
     },
     "id": 211,
@@ -84,7 +84,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 2138,
+        "sourceUnit": 2085,
         "src": "60:57:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -95,7 +95,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 1317,
+        "sourceUnit": 1264,
         "src": "119:52:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -106,7 +106,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 2400,
+        "sourceUnit": 2347,
         "src": "173:78:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -117,7 +117,7 @@
         "id": 5,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 1207,
+        "sourceUnit": 1154,
         "src": "253:27:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -216,7 +216,7 @@
               "id": 14,
               "name": "ERC721",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2137,
+              "referencedDeclaration": 2084,
               "src": "580:6:0"
             },
             "id": 15,
@@ -228,7 +228,7 @@
               "id": 16,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1316,
+              "referencedDeclaration": 1263,
               "src": "588:7:0"
             },
             "id": 17,
@@ -240,7 +240,7 @@
               "id": 18,
               "name": "ERC721URIStorage",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2399,
+              "referencedDeclaration": 2346,
               "src": "597:16:0"
             },
             "id": 19,
@@ -249,14 +249,14 @@
           }
         ],
         "contractDependencies": [
-          1316,
-          2137,
-          2253,
-          2399,
-          2457,
-          2776,
-          3003,
-          3015
+          1263,
+          2084,
+          2200,
+          2346,
+          2404,
+          2723,
+          2950,
+          2962
         ],
         "contractKind": "contract",
         "documentation": {
@@ -269,14 +269,14 @@
         "id": 210,
         "linearizedBaseContracts": [
           210,
-          2399,
-          1316,
-          2137,
-          2457,
-          2253,
-          3003,
-          3015,
-          2776
+          2346,
+          1263,
+          2084,
+          2404,
+          2200,
+          2950,
+          2962,
+          2723
         ],
         "name": "ERC721Tradable",
         "nodeType": "ContractDefinition",
@@ -287,7 +287,7 @@
               "id": 20,
               "name": "StringUtils",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1206,
+              "referencedDeclaration": 1153,
               "src": "628:11:0"
             },
             "nodeType": "UsingForDirective",
@@ -490,7 +490,7 @@
                   "id": 34,
                   "name": "ERC721",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2137,
+                  "referencedDeclaration": 2084,
                   "src": "857:6:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -712,7 +712,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1917,
+                      "referencedDeclaration": 1864,
                       "src": "1220:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -792,7 +792,7 @@
                   "id": 53,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1265,
+                  "referencedDeclaration": 1212,
                   "src": "1150:9:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -944,10 +944,10 @@
                       "name": "_safeMint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1831,
-                        1860
+                        1778,
+                        1807
                       ],
-                      "referencedDeclaration": 1831,
+                      "referencedDeclaration": 1778,
                       "src": "1424:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1016,7 +1016,7 @@
                       "name": "_setTokenURI",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2368,
+                      "referencedDeclaration": 2315,
                       "src": "1460:12:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
@@ -1402,10 +1402,10 @@
                       "name": "_safeMint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1831,
-                        1860
+                        1778,
+                        1807
                       ],
-                      "referencedDeclaration": 1831,
+                      "referencedDeclaration": 1778,
                       "src": "2023:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1444,7 +1444,7 @@
                   "id": 122,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1265,
+                  "referencedDeclaration": 1212,
                   "src": "2002:9:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -1527,7 +1527,7 @@
           },
           {
             "baseFunctions": [
-              1534
+              1481
             ],
             "body": {
               "id": 139,
@@ -1617,8 +1617,8 @@
           },
           {
             "baseFunctions": [
-              1968,
-              2398
+              1915,
+              2345
             ],
             "body": {
               "id": 154,
@@ -1667,7 +1667,7 @@
                       "lValueRequested": false,
                       "memberName": "_burn",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2398,
+                      "referencedDeclaration": 2345,
                       "src": "2285:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
@@ -1709,14 +1709,14 @@
                   "id": 144,
                   "name": "ERC721",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2137,
+                  "referencedDeclaration": 2084,
                   "src": "2248:6:0"
                 },
                 {
                   "id": 145,
                   "name": "ERC721URIStorage",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2399,
+                  "referencedDeclaration": 2346,
                   "src": "2256:16:0"
                 }
               ],
@@ -1769,8 +1769,8 @@
           },
           {
             "baseFunctions": [
-              1525,
-              2346
+              1472,
+              2293
             ],
             "body": {
               "id": 170,
@@ -1819,7 +1819,7 @@
                       "lValueRequested": false,
                       "memberName": "tokenURI",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2346,
+                      "referencedDeclaration": 2293,
                       "src": "2486:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_string_memory_ptr_$",
@@ -1863,14 +1863,14 @@
                   "id": 159,
                   "name": "ERC721",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2137,
+                  "referencedDeclaration": 2084,
                   "src": "2404:6:0"
                 },
                 {
                   "id": 160,
                   "name": "ERC721URIStorage",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2399,
+                  "referencedDeclaration": 2346,
                   "src": "2412:16:0"
                 }
               ],
@@ -1950,7 +1950,7 @@
           },
           {
             "baseFunctions": [
-              1651
+              1598
             ],
             "body": {
               "id": 208,
@@ -2277,7 +2277,7 @@
                       "lValueRequested": false,
                       "memberName": "isApprovedForAll",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1651,
+                      "referencedDeclaration": 1598,
                       "src": "3038:22:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_bool_$",
@@ -2436,40 +2436,40 @@
     "absolutePath": "/C/Users/editr/OneDrive/Desktop/etherprojects/SoulSwap/contracts/ERC721Tradable.sol",
     "exportedSymbols": {
       "Address": [
-        2753
+        2700
       ],
       "Context": [
-        2776
+        2723
       ],
       "ERC165": [
-        3003
+        2950
       ],
       "ERC721": [
-        2137
+        2084
       ],
       "ERC721Tradable": [
         210
       ],
       "ERC721URIStorage": [
-        2399
+        2346
       ],
       "IERC165": [
-        3015
+        2962
       ],
       "IERC721": [
-        2253
+        2200
       ],
       "IERC721Enumerable": [
-        2430
+        2377
       ],
       "IERC721Metadata": [
-        2457
+        2404
       ],
       "IERC721Receiver": [
-        2271
+        2218
       ],
       "Ownable": [
-        1316
+        1263
       ],
       "OwnableDelegateProxy": [
         6
@@ -2478,10 +2478,10 @@
         12
       ],
       "StringUtils": [
-        1206
+        1153
       ],
       "Strings": [
-        2979
+        2926
       ]
     },
     "id": 211,
@@ -2505,7 +2505,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 2138,
+        "sourceUnit": 2085,
         "src": "60:57:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2516,7 +2516,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 1317,
+        "sourceUnit": 1264,
         "src": "119:52:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2527,7 +2527,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 2400,
+        "sourceUnit": 2347,
         "src": "173:78:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2538,7 +2538,7 @@
         "id": 5,
         "nodeType": "ImportDirective",
         "scope": 211,
-        "sourceUnit": 1207,
+        "sourceUnit": 1154,
         "src": "253:27:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2637,7 +2637,7 @@
               "id": 14,
               "name": "ERC721",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2137,
+              "referencedDeclaration": 2084,
               "src": "580:6:0"
             },
             "id": 15,
@@ -2649,7 +2649,7 @@
               "id": 16,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1316,
+              "referencedDeclaration": 1263,
               "src": "588:7:0"
             },
             "id": 17,
@@ -2661,7 +2661,7 @@
               "id": 18,
               "name": "ERC721URIStorage",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2399,
+              "referencedDeclaration": 2346,
               "src": "597:16:0"
             },
             "id": 19,
@@ -2670,14 +2670,14 @@
           }
         ],
         "contractDependencies": [
-          1316,
-          2137,
-          2253,
-          2399,
-          2457,
-          2776,
-          3003,
-          3015
+          1263,
+          2084,
+          2200,
+          2346,
+          2404,
+          2723,
+          2950,
+          2962
         ],
         "contractKind": "contract",
         "documentation": {
@@ -2690,14 +2690,14 @@
         "id": 210,
         "linearizedBaseContracts": [
           210,
-          2399,
-          1316,
-          2137,
-          2457,
-          2253,
-          3003,
-          3015,
-          2776
+          2346,
+          1263,
+          2084,
+          2404,
+          2200,
+          2950,
+          2962,
+          2723
         ],
         "name": "ERC721Tradable",
         "nodeType": "ContractDefinition",
@@ -2708,7 +2708,7 @@
               "id": 20,
               "name": "StringUtils",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1206,
+              "referencedDeclaration": 1153,
               "src": "628:11:0"
             },
             "nodeType": "UsingForDirective",
@@ -2911,7 +2911,7 @@
                   "id": 34,
                   "name": "ERC721",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2137,
+                  "referencedDeclaration": 2084,
                   "src": "857:6:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -3133,7 +3133,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1917,
+                      "referencedDeclaration": 1864,
                       "src": "1220:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -3213,7 +3213,7 @@
                   "id": 53,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1265,
+                  "referencedDeclaration": 1212,
                   "src": "1150:9:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -3365,10 +3365,10 @@
                       "name": "_safeMint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1831,
-                        1860
+                        1778,
+                        1807
                       ],
-                      "referencedDeclaration": 1831,
+                      "referencedDeclaration": 1778,
                       "src": "1424:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -3437,7 +3437,7 @@
                       "name": "_setTokenURI",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2368,
+                      "referencedDeclaration": 2315,
                       "src": "1460:12:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
@@ -3823,10 +3823,10 @@
                       "name": "_safeMint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1831,
-                        1860
+                        1778,
+                        1807
                       ],
-                      "referencedDeclaration": 1831,
+                      "referencedDeclaration": 1778,
                       "src": "2023:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -3865,7 +3865,7 @@
                   "id": 122,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1265,
+                  "referencedDeclaration": 1212,
                   "src": "2002:9:0"
                 },
                 "nodeType": "ModifierInvocation",
@@ -3948,7 +3948,7 @@
           },
           {
             "baseFunctions": [
-              1534
+              1481
             ],
             "body": {
               "id": 139,
@@ -4038,8 +4038,8 @@
           },
           {
             "baseFunctions": [
-              1968,
-              2398
+              1915,
+              2345
             ],
             "body": {
               "id": 154,
@@ -4088,7 +4088,7 @@
                       "lValueRequested": false,
                       "memberName": "_burn",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2398,
+                      "referencedDeclaration": 2345,
                       "src": "2285:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
@@ -4130,14 +4130,14 @@
                   "id": 144,
                   "name": "ERC721",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2137,
+                  "referencedDeclaration": 2084,
                   "src": "2248:6:0"
                 },
                 {
                   "id": 145,
                   "name": "ERC721URIStorage",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2399,
+                  "referencedDeclaration": 2346,
                   "src": "2256:16:0"
                 }
               ],
@@ -4190,8 +4190,8 @@
           },
           {
             "baseFunctions": [
-              1525,
-              2346
+              1472,
+              2293
             ],
             "body": {
               "id": 170,
@@ -4240,7 +4240,7 @@
                       "lValueRequested": false,
                       "memberName": "tokenURI",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2346,
+                      "referencedDeclaration": 2293,
                       "src": "2486:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_string_memory_ptr_$",
@@ -4284,14 +4284,14 @@
                   "id": 159,
                   "name": "ERC721",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2137,
+                  "referencedDeclaration": 2084,
                   "src": "2404:6:0"
                 },
                 {
                   "id": 160,
                   "name": "ERC721URIStorage",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2399,
+                  "referencedDeclaration": 2346,
                   "src": "2412:16:0"
                 }
               ],
@@ -4371,7 +4371,7 @@
           },
           {
             "baseFunctions": [
-              1651
+              1598
             ],
             "body": {
               "id": 208,
@@ -4698,7 +4698,7 @@
                       "lValueRequested": false,
                       "memberName": "isApprovedForAll",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1651,
+                      "referencedDeclaration": 1598,
                       "src": "3038:22:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_bool_$",
@@ -4859,7 +4859,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-05-06T05:56:21.729Z",
+  "updatedAt": "2021-05-07T03:37:07.576Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

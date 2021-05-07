@@ -21,6 +21,8 @@
   "homepage": "https://github.com/editrocchio/ethertaph#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.0.0",
+    "@pinata/sdk": "^1.1.13",
+    "prompt-sync": "^4.2.0",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "devDependencies": {

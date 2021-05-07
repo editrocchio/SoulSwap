@@ -9,7 +9,7 @@ import "./ERC721Tradable.sol";
  */
 contract SoulFragment is ERC721Tradable {
     constructor(address _proxyRegistryAddress) public
-        ERC721Tradable("SoulFragment", "SOULS", _proxyRegistryAddress)
+        ERC721Tradable("Soul Fragment", "SOULS", _proxyRegistryAddress)
     {}
 
     // function baseTokenURI() public override pure returns (string memory) {

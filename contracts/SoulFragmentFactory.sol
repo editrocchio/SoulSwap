@@ -48,7 +48,7 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     }
 
     function name() external override view returns (string memory) {
-        return "SoulFragment Sale";
+        return "Soul Fragment";
     }
 
     function symbol() external override view returns (string memory) {
@@ -118,16 +118,21 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         return maxFragmentSupply[hashed];
     }
 
+    function getCurrentFragmentCount(string memory soulName) public view returns (uint)  {
+        bytes32 hashed = keccak256(abi.encode(soulName));
+        return currentFragmentCount[hashed];
+    }
+
     function mintTokenURI(string memory _tokenURI, address _toAddress, uint totalRequest, string memory soulName) public {
         bytes32 hashed = keccak256(abi.encode(soulName));
-        require(_canMint(hashed, totalRequest), "request is higher than the max supply");
+        require(_canMint(hashed), "request is higher than the max supply");
         SoulFragment openSeaSoul = SoulFragment(nftAddress);
         openSeaSoul.mintToken(_toAddress, _tokenURI);
         currentFragmentCount[hashed]++;
     }
 
-    function _canMint(bytes32 hashedSoulName, uint totalRequest) public view returns (bool) {
-        if(totalRequest <= (maxFragmentSupply[hashedSoulName] - currentFragmentCount[hashedSoulName])) {
+    function _canMint(bytes32 hashedSoulName) public view returns (bool) {
+        if(currentFragmentCount[hashedSoulName] < maxFragmentSupply[hashedSoulName]) {
             return true;
         }
         return false;
@@ -164,17 +169,17 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
         return StringUtils.strConcat(baseURI, metadataURI);
     }
 
-    // /**
-    //  * Hack to get things to work automatically on OpenSea.
-    //  * Use transferFrom so the frontend doesn't have to worry about different method names.
-    //  */
-    // function transferFrom(
-    //     address _from,
-    //     address _to,
-    //     uint256 _tokenId
-    // ) public {
-    //     mint(_tokenId, _to);
-    // }
+    /**
+     * Hack to get things to work automatically on OpenSea.
+     * Use transferFrom so the frontend doesn't have to worry about different method names.
+     */
+    function transferFrom(
+        address _from,
+        address _to,
+        uint256 _tokenId
+    ) public {
+        mint(_tokenId, _to);
+    }
 
     /**
      * Hack to get things to work automatically on OpenSea.
