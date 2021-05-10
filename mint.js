@@ -11,26 +11,65 @@ const NFT_ABI = JSON.parse(fs.readFileSync(__dirname + "\\build\\contracts\\Soul
 const FACTORY_ABI = JSON.parse(fs.readFileSync(__dirname + '\\build\\contracts\\SoulFragmentFactory.json')).abi;
 
 const NUM_FRAGMENTS = 1;
-const MAX_FRAGMENTS = 1;
+const MAX_FRAGMENTS = 5;
 //const NUM_LOOTBOXES = 4;
 //const DEFAULT_OPTION_ID = 0;
 //const LOOTBOX_OPTION_ID = 2;
 
-const SOUL_NAME = "Jesus Christ"
+const SOUL_NAME = "William Shakespeare"
 let fileName = SOUL_NAME.replace(/ /g,'');
-let description = ""
-let image = ""
-let birthdayUnix;
-let deathDayUnix;
+let description = "\"To be, or not to be. That is the question...\" - William Shakespeare"
+let birthdayUnix = 1546360800;
+let deathDayUnix = 1546360800;
+let imgPath = "./imgs/WilliamShakespeare.jpg"
+
+let userInput = true;
+let lastChoice = "";
 
 if (!MNEMONIC || !ALCHEMY_API_KEY || !OWNER_ADDRESS ) {
   console.error(
-    "Please set a mnemonic, Alchemy/Infura key, owner, and contract address."
+    "Please set a mnemonic, Alchemy key, owner, and contract address."
   );
   return;
 }
 
-const uploadMetadata = async (count) => {
+function confirmMint(tokenUri) {
+  if(lastChoice != "ya") {
+    userInput = true;
+    console.log('Are you sure you want to mint this? It cannot be undone. '
+    + 'Review the metadata first at ' + tokenUri + " and confirm yes to " 
+    + "this iteration (y) yes to all future iterations (ya) or cancel (c)")
+
+    while(userInput) {
+      let choice = prompt(" >");
+
+      lastChoice = choice;
+
+      if(choice == "c") {
+        process.exit(1);
+      } else if(choice == "y" || choice == "ya") {
+        userInput = false;
+      } 
+    }
+  }
+}
+
+const uploadImage = async (path) => {
+  const readableStreamForFile = fs.createReadStream(path);
+  const options = {
+    pinataMetadata: {
+        name: fileName
+    }
+  };
+  const res = pinata.pinFileToIPFS(readableStreamForFile, options).then((result) => {
+      return result;
+    }).catch((err) => {
+      return err;
+    });
+  return res;
+}
+
+const uploadMetadata = async (birthdayUnix, deathDayUnix, description, count, imgUri) => {
   let body = {
     "attributes": [
       {
@@ -51,12 +90,12 @@ const uploadMetadata = async (count) => {
       }
     ], 
     "description": description,
-    "image": image,
+    "image": imgUri,
     "name": SOUL_NAME
   }
   const options = {
     pinataMetadata: {
-        name: fileName
+        name: fileName + ".json"
     }
   };
   const res = await pinata.pinJSONToIPFS(body, options).then((result) => {
@@ -79,21 +118,35 @@ const main = async () => {
       FACTORY_CONTRACT_ADDRESS,
       { gasLimit: "1000000" }
     );
-      //TODO: do the check here to save transaction
-    await factoryContract.methods.setMaxFragmentSupply(SOUL_NAME, MAX_FRAGMENTS).send({ from: OWNER_ADDRESS })
-    
+      const maxFragments = await factoryContract.methods.getMaxFragmentSupply(SOUL_NAME).call();
+    if(maxFragments == 0) {
+      await factoryContract.methods.setMaxFragmentSupply(SOUL_NAME, MAX_FRAGMENTS).send({ from: OWNER_ADDRESS })
+    }
+
+    // //upload img first
+    let imgUri = "https://gateway.pinata.cloud/ipfs/QmPV6CsWGgKhSdVRzYyxyMtjgYQCCxpcibuBL3X24LT7DZ?filename=WilliamShakespeare.jpeg"
+    // const imgRes = await uploadImage(imgPath);
+    // if(imgRes.IpfsHash) {
+    //   imgUri = "https://gateway.pinata.cloud/ipfs/" + 
+    //     JSON.parse(JSON.stringify(imgRes.IpfsHash)) + "?filename=" + fileName
+    //   console.log("Image successfully pinned: " + imgUri)
+    // }
    // SoulFragments issued directly to the owner.
     let tokenUri;
     for (var i = 0; i < NUM_FRAGMENTS; i++) {
       try {
-        const ipfsObj = await uploadMetadata(i + 1);
+        const ipfsObj = await uploadMetadata(birthdayUnix, deathDayUnix, description, i + 5, imgUri);
         if(ipfsObj.IpfsHash) {
-          tokenUri = JSON.stringify(ipfsObj.IpfsHash) + "?filename=" + fileName + ".json"
+          tokenUri =  "https://gateway.pinata.cloud/ipfs/" 
+            + JSON.parse(JSON.stringify(ipfsObj.IpfsHash)) + "?filename=" + fileName + ".json"
+            console.log("JSON successfully pinned: " + tokenUri)
         }
-        
+
+        confirmMint(tokenUri);
+
         if(tokenUri && tokenUri !== "") {
           const result = await factoryContract.methods
-            .mintTokenURI(TOKEN_URI, OWNER_ADDRESS, NUM_FRAGMENTS,
+            .mintTokenURI(tokenUri, OWNER_ADDRESS, NUM_FRAGMENTS,
               SOUL_NAME)
             .send({ from: OWNER_ADDRESS });
           console.log("Minted FRAGMENT. Transaction: " + result.transactionHash);
@@ -133,5 +186,3 @@ const main = async () => {
 }
 
 main();
-// const name = prompt('What is your name?');
-// console.log(`Hey there ${name}`);

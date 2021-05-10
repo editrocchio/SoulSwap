@@ -108,9 +108,7 @@ contract SoulFragmentFactory is IFactoryERC721, Ownable {
     //Can only ever be set once
     function setMaxFragmentSupply(string memory soulName, uint total) public {
         bytes32 hashed = keccak256(abi.encode(soulName));
-        if(maxFragmentSupply[hashed] == 0) {
-            maxFragmentSupply[hashed] = total;
-        }
+        maxFragmentSupply[hashed] = total;
     }
 
     function getMaxFragmentSupply(string memory soulName) public view returns (uint)  {
